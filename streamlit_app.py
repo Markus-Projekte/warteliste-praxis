@@ -13,9 +13,12 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 page = st.sidebar.radio("Navigation", ["Patienten-Anmeldung", "Interne Warteliste"])
 
 # --- SEITE 1: PATIENTEN-ANMELDUNG ---
-if page == "Patienten-Anmeldung":
-    st.header("🏥 Akut-Warteliste")
-    st.write("Bitte tragen Sie sich hier ein. Ich melde mich bei Ihnen, sobald eine Lücke frei wird.")
+if page == "Anmeldung für Patienten":
+    # Logo anzeigen (Breite kannst du anpassen)
+    st.image("logo.png", width=200) 
+    
+    st.header("Akut-Warteliste")
+    st.write("Praxis für Osteopathie Häfele")
     
     with st.form("warteliste_form", clear_on_submit=True):
         name = st.text_input("Name*")
