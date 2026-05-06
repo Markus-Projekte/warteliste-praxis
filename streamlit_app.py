@@ -14,7 +14,7 @@ page = st.sidebar.radio("Navigation", ["Patienten-Anmeldung", "Interne Wartelist
 
 # --- SEITE 1: PATIENTEN-ANMELDUNG ---
 if page == "Patienten-Anmeldung":
-    st.header("🏥 Akut-Warteliste")
+    st.header("👐 Akut-Warteliste")
     st.write("Bitte tragen Sie sich hier ein. Ich melde mich bei Ihnen, sobald eine Lücke frei wird.")
     
     with st.form("warteliste_form", clear_on_submit=True):
