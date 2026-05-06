@@ -31,7 +31,7 @@ if page == "Patienten-Anmeldung":
                 # Bestehende Daten aus dem Google Sheet lesen
                 # Falls das Sheet leer ist, erstellen wir eine leere Tabelle mit Spalten
                 try:
-                    existing_data = conn.read(worksheet="Daten")
+                    existing_data = conn.read(worksheet="Daten", ttl=0)
                 except:
                     existing_data = pd.DataFrame(columns=["Zeitstempel", "Name", "Telefon", "Verfügbarkeit", "Grund", "Status"])
 
@@ -64,7 +64,7 @@ elif page == "Interne Warteliste":
     password = st.text_input("Admin-Passwort", type="password")
     if password == "Nuessle3": # <-- ÄNDERE DIESES PASSWORT!
         try:
-            df = conn.read(worksheet="Daten")
+            df = conn.read(worksheet="Daten", ttl=0)
             if not df.empty:
                 st.dataframe(df)
                 st.info("Sie können Einträge direkt in Ihrer Google Tabelle löschen oder bearbeiten.")
